@@ -23,57 +23,55 @@ function formSubmitSea(event){
 	// document.querySelector("h2#season").innerText = null;
 	// document.querySelector("h2#notes").innerText = null;
 
-	document.querySelector("h2#landmark").innerText = "Landmarks: " + sea[1];
-	document.querySelector("h2#season").innerText = "Best Season to Visit: " + sea[2];
-	document.querySelector("h2#notes").innerText = "Other Notes: " + sea[3];
-	console.log(sea[3])
+	document.querySelector("h2#landmark").innerText = "Landmarks: " + sea.landmark;
+	document.querySelector("h2#season").innerText = "Best Season to Visit: " + sea.season;
+	document.querySelector("h2#notes").innerText = "Other Notes: " + sea.notes;
+	console.log(sea.landmark)
 }
 
 function formSubmitSf(event){
 	event.preventDefault();
-document.querySelector("h2#landmark").innerText = "Landmarks: " + sf[1];	
-document.querySelector("h2#season").innerText = "Best Season to Visit: " + sf[2];
-document.querySelector("h2#notes").innerText = "Other Notes: " + sf[3]
-console.log(sf[3])
+document.querySelector("h2#landmark").innerText = "Landmarks: " + sf.landmark;	
+document.querySelector("h2#season").innerText = "Best Season to Visit: " + sf.season;
+document.querySelector("h2#notes").innerText = "Other Notes: " + sf.notes;
+console.log(sf.notes)
 }
 
 function formSubmitNyc(event){
 	event.preventDefault();
-document.querySelector("h2#landmark").innerText = "Landmarks: " + nyc[1];
-document.querySelector("h2#season").innerText = "Best Season to Visit: " + nyc[2];
-document.querySelector("h2#notes").innerText = "Other Notes: " + nyc[3];
-	console.log(nyc[3])
+document.querySelector("h2#landmark").innerText = "Landmarks: " + nyc.landmark;
+document.querySelector("h2#season").innerText = "Best Season to Visit: " + nyc.season;
+document.querySelector("h2#notes").innerText = "Other Notes: " + nyc.notes;
+	console.log(nyc.landmark)
 }
 
 function formSubmitPort(event){
 	event.preventDefault();
-document.querySelector("h2#landmark").innerText = "Landmarks: " + port[1];
-document.querySelector("h2#season").innerText = "Best Season to Visit: " + port[2];
-document.querySelector("h2#notes").innerText = "Other Notes: " + port[3];
-console.log(port[3])
+document.querySelector("h2#landmark").innerText = "Landmarks: " + port.landmark;
+document.querySelector("h2#season").innerText = "Best Season to Visit: " + port.season;
+document.querySelector("h2#notes").innerText = "Other Notes: " + port.notes;
+console.log(port.season)
 }
 
 function formSubmitNola(event){
 	event.preventDefault();
-document.querySelector("h2#landmark").innerText = "Landmarks: " + nola[1];
-document.querySelector("h2#season").innerText = "Best Season to Visit: " + nola[2];
-document.querySelector("h2#notes").innerText = "Other Notes: " + nola[3];
-console.log(nola[3])
+document.querySelector("h2#landmark").innerText = "Landmarks: " + nola.landmark;
+document.querySelector("h2#season").innerText = "Best Season to Visit: " + nola.season;
+document.querySelector("h2#notes").innerText = "Other Notes: " + nola.notes;
+console.log(nola.season)
 }
 
 
 window.addEventListener("load", function(){
-	let form = document.querySelector("form#destForm")
-	console.log("window load event listener")
-	form.addEventListener("submit", formSubmit);
-	let seaForm = document.querySelector("button#seattle")
-	seaForm.addEventListener("submit", function(){})
-	let sfForm = document.querySelector("button#sanFran")
-	sfForm.addEventListener("submit", function(){})
-	let nycForm = document.querySelector("button#newYork")
-	nycForm.addEventListener("submit", function(){})
-	let pdxForm = document.getElementById("pdxForm")
-	pdxForm.addEventListener("submit", function(){})
-	let nolaForm = document.querySelector("button#newOrleans")
-	nolaForm.addEventListener("submit", function(){})
+	console.log("window load event listener");
+	let seaForm = document.getElementById("seaForm");
+	seaForm.addEventListener("submit", formSubmitSea);
+	let sfForm = document.getElementById("sfForm");
+	sfForm.addEventListener("submit", formSubmitSf);
+	let nycForm = document.getElementById("nycForm");
+	nycForm.addEventListener("submit", formSubmitNyc);
+	let pdxForm = document.getElementById("pdxForm");
+	pdxForm.addEventListener("submit", formSubmitPort);
+	let nolaForm = document.getElementById("nolaForm");
+	nolaForm.addEventListener("submit", formSubmitNola);
 })
